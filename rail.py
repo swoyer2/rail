@@ -63,5 +63,5 @@ class Track(VGroup):
         self.left_rail = Rail(length=length).shift(LEFT * width / 2)
         self.right_rail = Rail(length=length).shift(RIGHT * width / 2)
 
-        self.ties = [Prism(dimensions=np.array([width + 2, 0.5, 1.0])).shift(OUT * 2 * (i) + DOWN * 0.8) for i in range(int(length // 2))]
+        self.ties = [Prism(dimensions=np.array([width + 2, 0.5, 1.0])).shift(OUT * 2 * (i + 0.5) + DOWN * 0.8) for i in range(int(length // 2))]
         self.add(self.left_rail, self.right_rail, self.ties)
